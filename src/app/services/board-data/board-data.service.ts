@@ -23,12 +23,6 @@ export class BoardDataService {
     this.boards().length > 0 ? this.boards()[this.currentIdx()] : null,
   );
 
-  private saveBoards = effect(() => {
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('boards', JSON.stringify(this.boards()));
-    }
-  });
-
   constructor(
     private boardHttp: BoardHttpService,
     @Inject(PLATFORM_ID) private platformId: object,

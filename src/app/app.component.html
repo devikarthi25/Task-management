@@ -7,10 +7,8 @@
     class="main flex-1 duration-700"
   >
     <app-navbar
-      [opened]="isSidebarOpen"
       [activeBoard]="activeBoard()"
       [boards]="boards()"
-      [darkMode]="darkMode"
       (boardSelect)="selectBoard($event)"
       (boardAdd)="addBoard()"
       (boardEdit)="editBoard()"
