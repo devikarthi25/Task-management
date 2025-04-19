@@ -1,0 +1,45 @@
+<nav
+  class="fixed z-50 hidden w-[-webkit-fill-available] border-b border-lines-light bg-white dark:border-lines-dark dark:bg-grey-dark sm:flex sm:h-[8rem] lg:h-[9.7rem]"
+>
+  <figure
+    class="flex items-center border-r border-lines-light px-2.4 dark:border-lines-dark"
+  >
+  <img src="assets/images/logo-mobile.svg" alt="logo" />
+  </figure>
+  <header class="flex flex-1 items-start sm:px-2.4 lg:px-3.2">
+    <h1
+      class="mr-auto flex-1 font-bold text-black dark:text-white sm:pt-[2.8rem] sm:text-lx sm:leading-lx lg:pt-[2.9rem] lg:text-xl lg:leading-xl"
+    >
+      {{ activeBoard?.name }}
+    </h1>
+    <div class="flex gap-2.4 sm:pt-1.6 lg:pt-8">
+      <button
+        [disabled]="!activeBoard?.columns?.length"
+        (click)="addTask()"
+        class="btn-primary btn-lg w-[16.4rem]"
+      >
+        + Add New Task
+      </button>
+    </div>
+  </header>
+</nav>
+
+<nav
+  class="fixed flex h-[6.4rem] w-[-webkit-fill-available] items-center border-b border-lines-light bg-white px-1.6 dark:border-lines-dark dark:bg-grey-dark sm:hidden"
+>
+  <figure class="mr-1.6 h-10 w-2.4">
+    <img src="assets/images/logo-mobile.svg" alt="logo" />
+  </figure>
+  <h1
+    class="board-name mr-0.8 text-lg font-bold leading-lg text-black dark:text-white"
+  >
+    {{ activeBoard?.name }}
+  </h1>
+  <button
+    [disabled]="!activeBoard?.columns?.length"
+    (click)="addTask()"
+    class="btn-primary btn-mb w-4.8"
+  >
+    <img src="assets/images/icon-add-task-mobile.svg" alt="add" />
+  </button>
+</nav>
